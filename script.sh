@@ -8,7 +8,7 @@ branch_name="${BRANCH_NAME}"
 
 $(git fetch --tags)
 
-last_tag=$(git describe --abbrev=0 --tags)
+last_tag=$(git describe --abbrev=0 --tags --exact-match)
 
 if [[ $last_tag ]]; then
 
