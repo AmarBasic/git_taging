@@ -17,7 +17,7 @@ git checkout $BRANCH_NAME
 git tag -d $(git tag -l)
 git fetch --tags
 
-last_tag=$(git tag -l "$BRANCH_NAME-$MAJOR_VERSION.$MINOR_VERSION.*" sort=v:refname | tail -n 1)
+last_tag=$(git tag -l "$BRANCH_NAME-$MAJOR_VERSION.$MINOR_VERSION.*" | sort -V | tail -n 1)
 
 if [[ $last_tag ]]; then
     echo "Last tag: $last_tag"
